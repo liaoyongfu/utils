@@ -1,24 +1,43 @@
 {
-  "name": "lyfutils",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/liaoyongfu/utils.git",
-  "author": "liaoyf <liaoy@sunsharing.com.cn>",
-  "license": "MIT",
-  "dependencies": {
-    "qrcode.react": "^1.0.0",
-    "qs": "^6.9.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "react-use": "^15.2.4",
-    "rmc-notification": "^1.0.0"
-  },
-  "devDependencies": {
-    "@types/qrcode.react": "^1.0.1",
-    "@types/qs": "^6.9.3",
-    "@types/react": "^16.9.36",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.5"
-  }
+    "name": "lyfutils",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/liaoyongfu/utils.git",
+    "author": "liaoyf <liaoy@sunsharing.com.cn>",
+    "license": "MIT",
+    "dependencies": {
+        "qrcode.react": "^1.0.0",
+        "qs": "^6.9.4",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-use": "^15.2.4",
+        "rmc-notification": "^1.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@storybook/addon-actions": "^5.3.19",
+        "@storybook/addon-docs": "^5.3.19",
+        "@storybook/addon-info": "^5.3.19",
+        "@storybook/addon-links": "^5.3.19",
+        "@storybook/addon-storysource": "^5.3.19",
+        "@storybook/addons": "^5.3.19",
+        "@storybook/react": "^5.3.19",
+        "@types/jest": "^26.0.4",
+        "@types/qrcode.react": "^1.0.1",
+        "@types/qs": "^6.9.3",
+        "@types/react": "^16.9.36",
+        "@types/react-dom": "^16.9.8",
+        "@types/react-router-dom": "^5.1.5",
+        "babel-loader": "^8.1.0",
+        "jest": "^26.1.0",
+        "react-docgen-typescript-loader": "^3.7.2",
+        "react-is": "^16.13.1",
+        "ts-loader": "^8.0.0",
+        "typescript": "^3.9.6"
+    },
+    "scripts": {
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    }
 }

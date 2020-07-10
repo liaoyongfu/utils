@@ -1,0 +1,29 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import useQuery from '../src/hooks/useQuery';
+
+<Meta title="Hooks/useQuery" component={useQuery} />
+
+# useQuery
+
+快速获取 react 路由查询字符串：
+
+````jsx
+// href: http://localhost:3000/basicPs#/home?fwbh=12&dzbh=23
+import React from 'react';
+import { useQuery } from 'lyfutils';
+
+const Demo = () => {
+    const { fwbh, dzbh } = useQuery();
+    return <div>Fwbh: {fwbh}, Dzbh: {dzbh}</div>
+};
+````
+
+## API
+
+````jsx
+useQuery()
+````
+
+***Returns***
+
+(Object): 返回所有查询字符串参数的值

@@ -1,0 +1,49 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import useDebounceText from "../src/hooks/useDebounceText";
+
+<Meta title="Hooks/useDebounceText" component={useDebounceText} />
+
+export const Basic = () => {
+    const { targetValue, originValue, onOriginChange, loading } = useDebounceText('');
+    return (
+        <div>
+            <input type="text" placeholder="请输入" value={originValue} onChange={e => onOriginChange(e.target.value)} />
+            <div>
+                输入的值：{loading ? '输入中...' : targetValue}
+            </div>
+        </div>
+    )
+};
+
+# useDebounceText
+
+<Preview>
+<Story name="Basic">
+  {() => {
+       const { targetValue, originValue, onOriginChange, loading } = useDebounceText('');
+       return (
+           <div>
+               <input type="text" placeholder="请输入" value={originValue} onChange={e => onOriginChange(e.target.value)} />
+               <div>
+                   输入的值：{loading ? '输入中...' : targetValue}
+               </div>
+           </div>
+       )
+   }}
+</Story>
+</Preview>
+
+## API
+
+````jsx
+useDebounceText(initValue: string|undefined, ms: number)
+````
+
+***Params***
+
+- ***initValue***：初始化值
+- ***ms***：防抖时间段，单位毫秒
+
+***Returns***
+
+- (Object): 返回所有查询字符串参数的值

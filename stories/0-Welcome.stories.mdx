@@ -1,0 +1,30 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import QRCode from '../src/components/QRCode';
+
+<Meta title="Welcome/Welcome" />
+
+# lyfutils 工具库
+
+主要是在项目开发中，总结一些组件、自定义 hooks、工具函数等。
+
+## 安装
+
+````
+yarn add lyfutils
+````
+
+## 使用
+
+````jsx
+import { QRCode } from 'react';
+
+const Demo = () => {
+    return (
+        <QRCode value="http://www.baidu.com" alt="百度" />
+    )
+};
+````
+
+## 更新日志
+
+[CHANGELOG](./CHANGELOG.md)
