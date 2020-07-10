@@ -21,6 +21,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
+      
+    # Yarn Install
+    - name: Install
+      run: yarn
 
     # Runs a single command using the runners shell
     - name: Building docs
