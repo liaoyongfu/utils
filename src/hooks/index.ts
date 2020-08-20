@@ -1,7 +1,4 @@
-import useDebounceText from "./useDebounceText";
+import useDebounceText from './useDebounceText';
 import useQuery from './useQuery';
 
-export {
-    useDebounceText,
-    useQuery
-};
+export { useDebounceText, useQuery };

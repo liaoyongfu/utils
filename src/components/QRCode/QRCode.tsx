@@ -1,4 +1,4 @@
-import React, {useRef, useLayoutEffect, CSSProperties} from 'react';
+import React, { useRef, useLayoutEffect, CSSProperties } from 'react';
 import QRC from 'qrcode.react';
 
 interface Props {
@@ -6,22 +6,22 @@ interface Props {
      * 是否生成图片。当需要长按保存图片时可以设置为 `true`
      * @default false
      */
-    useImg?: boolean,
+    useImg?: boolean;
     /**
      * 需要生成二维码的 `URL`
      */
-    value: string,
+    value: string;
     /**
      * 当设置成 `useImg` 时，可以指定 `<img>` 标签的 alt 属性
      */
-    alt?: string,
+    alt?: string;
     /**
      * 针对图片设置 css 样式
      */
-    style?: CSSProperties
+    style?: CSSProperties;
 }
 
-const QRCode = ({useImg, value, style, alt}: Props) => {
+const QRCode = ({ useImg, value, style, alt }: Props) => {
     const qrCode = useRef<HTMLDivElement>(null);
     const img = useRef<HTMLImageElement>(null);
 
@@ -44,14 +44,15 @@ const QRCode = ({useImg, value, style, alt}: Props) => {
                     ...style
                 }}
             />
-            {useImg && (
-                <img
-                    alt={alt}
-                    style={style} ref={img}
-                />
-            )}
+            {useImg && <img alt={alt} style={style} ref={img} />}
         </div>
     );
 };
+
+QRCode.defaultProps = {
+    useImg: false,
+    alt: '二维码',
+    style: {}
+} as Props;
 
 export default QRCode;

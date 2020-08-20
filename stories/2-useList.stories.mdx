@@ -1,0 +1,33 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useCallback } from 'react';
+import useList from "../src/hooks/useList";
+
+<Meta title="Hooks/useList" component={useList} />
+
+# useList
+
+<Preview>
+<Story name="Basic">
+  {() => {
+    const { list, page } = useList({
+        data: useCallback(async () => setTimeout(() => {
+            return {
+                list: [],
+                page: {
+                    totalNum: 1,
+                    totalPage: 1,
+                    currentPage: 1,
+                    linesPerpage: 10
+                }
+            }
+        }, 1000)),
+      reqData: {
+        a: 1
+      }
+      });
+    return (
+        <div>hello</div>
+    )
+   }}
+</Story>
+</Preview>

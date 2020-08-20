@@ -3,18 +3,6 @@ import useDebounceText from "../src/hooks/useDebounceText";
 
 <Meta title="Hooks/useDebounceText" component={useDebounceText} />
 
-export const Basic = () => {
-    const { targetValue, originValue, onOriginChange, loading } = useDebounceText('');
-    return (
-        <div>
-            <input type="text" placeholder="请输入" value={originValue} onChange={e => onOriginChange(e.target.value)} />
-            <div>
-                输入的值：{loading ? '输入中...' : targetValue}
-            </div>
-        </div>
-    )
-};
-
 # useDebounceText
 
 <Preview>
