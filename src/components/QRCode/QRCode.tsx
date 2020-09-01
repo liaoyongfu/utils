@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect, CSSProperties } from 'react';
 import QRC from 'qrcode.react';
 
-interface Props {
+export interface QRCodeProps {
     /**
      * 是否生成图片。当需要长按保存图片时可以设置为 `true`
      * @default false
@@ -21,7 +21,7 @@ interface Props {
     style?: CSSProperties;
 }
 
-const QRCode = ({ useImg, value, style, alt }: Props) => {
+const QRCode = ({ useImg, value, style, alt }: QRCodeProps) => {
     const qrCode = useRef<HTMLDivElement>(null);
     const img = useRef<HTMLImageElement>(null);
 
@@ -53,6 +53,6 @@ QRCode.defaultProps = {
     useImg: false,
     alt: '二维码',
     style: {}
-} as Props;
+} as QRCodeProps;
 
 export default QRCode;

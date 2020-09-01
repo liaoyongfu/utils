@@ -6,28 +6,44 @@ import useList from "../src/hooks/useList";
 
 # useList
 
-<Preview>
-<Story name="Basic">
-  {() => {
-    const { list, page } = useList({
-        data: useCallback(async () => setTimeout(() => {
-            return {
-                list: [],
-                page: {
-                    totalNum: 1,
-                    totalPage: 1,
-                    currentPage: 1,
-                    linesPerpage: 10
-                }
-            }
-        }, 1000)),
-      reqData: {
-        a: 1
-      }
-      });
+根据查询条件获取列表数据，并通过查询参数方式记住查询条件。
+
+## 原理
+
+获取查询参数 =》 回填表单 =》 点击查询时触发查询，并更新表单值到查询参数
+
+
+## 示例
+
+````jsx
+import React from 'react';
+import { useList } from '@liaoyf/lyfutils';
+
+const Demo = () => {
+    const { list, page, loading } = useList({
+        data: async(reqData) => await fetch('/api/getList', {
+            data: JSON.stringify(reqData)
+        }),
+        initialReqData: {
+            orgCode: '305024'
+        },
+        formToQuery: {
+            grid: form.getFieldValue('grid'),
+            street: form.getFieldValue('street')
+        },
+        reqData: {
+            orgCode: form.getFieldValue('orgCode')
+        }
+    });
     return (
-        <div>hello</div>
+        <div>
+            <Table dataSource={list} page={page} />
+        </div>
     )
-   }}
-</Story>
-</Preview>
+};
+````
+
+## TODO
+
+- 增加 storage 方式记住查询条件（刷新页面查询条件就会没掉）
+- 增加在线示例
